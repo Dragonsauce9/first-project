@@ -9,6 +9,10 @@ movieController.get('/create', (req, res) =>  {
 
 });
 
+movieController.get('/:movieId/details', (req, res) => {
+res.render('details');
+});
+
 
 
 export default movieController;
