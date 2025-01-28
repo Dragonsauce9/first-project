@@ -1,5 +1,5 @@
 export default [{
-id: 1,
+id: "bd32767e-b485-4c3f-a51b-4124fcc6b59a",
 title: 'Jungle Cuise',
 genre: 'Adventure',
 description: 'Description: Dreaming about saving countless lives and having another adventure, the feisty English feminist and doctor of botany, Dr Lily Houghton, embarks on a peril-laden mission to change the world. Along with her fashionable brother, MacGregor, Dr Houghton enlists the help of the arrogant, wisecracking riverboat skipper, Captain Frank Wolff, to guide them through the serpentine Amazon River in La Quila, his swift wooden boat. Now, as the intrepid trio ventures deeper and deeper into the heart of an impenetrable green maze, searching for something that cannot be found, a centuries-old curse and the ruthless aristocrat, Prince Joachim, threaten to put an end to their ambitious plans.',
@@ -12,7 +12,7 @@ category: 'Movie',
 
 },
 {
-    id: 2,
+    id: "bd3274e-b485-4c3f-a51b-4124ac6b59a",
     title: 'The Lord of the Rings Fallowship of the Ring',
     genre: 'Adventure',
     description: 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
@@ -23,5 +23,17 @@ category: 'Movie',
     category: 'Movie',
 
 
-}
+},
+{
+    id: '062696fb-1b8a-4eb7-9693-dcd4bc33b8b2',
+    title: 'The Walking Dead ',
+    category: 'tv-show',
+    genre: 'Zombie Horror',
+    director: 'Frank Darabont',
+    year: '2010',
+    imageUrl: 'https://m.media-amazon.com/images/S/pv-target-images/02a27913b67c6671e4830e4eec88720199cb07cba4b182919234273143834b2b.jpg',
+    rating: '8.1',
+    description: 'Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins and must lead a group of survivors to stay alive.'
+  },
+
 ];

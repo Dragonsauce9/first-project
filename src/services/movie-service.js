@@ -4,6 +4,13 @@ import movies from "../movies.js";
 
 
 export default {
+
+    getAll() {
+        return movies;
+
+    },
+
+    
 findOne(movieId) {
 const result = movies.find(movie => movie.id == movieId);
 
@@ -17,6 +24,7 @@ create(movieData) {
     movies.push({
         id: newId,
         ...movieData,
+        rating: Number(movieData.rating),
     });
 
     return newId;

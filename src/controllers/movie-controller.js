@@ -15,14 +15,15 @@ const newMovie = req.body;
 
 movieService.create(newMovie);
 
-res.end();
+res.redirect('/');
 });
 
 movieController.get('/:movieId/details', (req, res) => {
     const movieId = req.params.movieId;
-    const movie = movieService.findOne(movieId)
+    const movie = movieService.findOne(movieId);
+    movie.rating
 
-res.render('details', { movie});
+    res.render('details', { movie});
 });
 
 
