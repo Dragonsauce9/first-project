@@ -32,7 +32,7 @@ category: 'Movie',
     director: 'Frank Darabont',
     year: '2010',
     imageUrl: 'https://m.media-amazon.com/images/S/pv-target-images/02a27913b67c6671e4830e4eec88720199cb07cba4b182919234273143834b2b.jpg',
-    rating: '8.1',
+    rating: 8.1,
     description: 'Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins and must lead a group of survivors to stay alive.'
   },
 
