@@ -1,40 +1,56 @@
-import { v4 as uuid } from 'uuid';
-import movies from "../movies.js";
+import Movie from '../models/Movie.js';
 
 export default {
     getAll(filter = {}) {
-        let result = movies;
+        let query = Movie.find({});
 
         if (filter.search) {
-            result = result.filter(movie => movie.title.toLowerCase().includes(filter.search.toLowerCase()));
+            // TODO: fix partial case insensitive search 
+            query = query.where({ title: filter.search });
         }
 
         if (filter.genre) {
-            result = result.filter(movie => movie.genre.toLowerCase() === filter.genre);
+            // TODO: add case insensitive search
+            query = query.where({ genre: filter.genre });
         }
 
         if (filter.year) {
-            result = result.filter(movie => movie.year === filter.year);
+            query = query.where({ year: Number(filter.year) })
         }
 
+        return query;
+    },
+    getOne(movieId) {
+        const result = Movie.findById(movieId);
+
         return result;
     },
-    findOne(movieId) {
-        // TODO: if movie is missing?
-
-        const result = movies.find(movie => movie.id === movieId);
-
-        return result;
+    getOneWithCasts(movieId) {
+        return this.getOne(movieId).populate('casts');
     },
     create(movieData) {
-        const newId = uuid();
-
-        movies.push({
-            id: newId,
+        const result = Movie.create({
             ...movieData,
             rating: Number(movieData.rating),
+            year: Number(movieData.year),
         });
 
-        return newId;
+        return result;
+    },
+    async attachCast(movieId, castId) {
+
+        // Attach #1
+        // const movie = await Movie.findById(movieId);
+        // if (movie.casts.includes(castId)) {
+        //     return;
+        // }
+
+        // movie.casts.push(castId);
+        // await movie.save();
+
+        // return movie;
+
+        // Attach #2
+        return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } });
     }
 }
